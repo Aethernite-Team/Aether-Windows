@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "Aether-Windows (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "Aether-Windows (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Aether_Windows.Styles">
+
+    <SolidColorBrush
+        x:Key="AccentSplitButtonBackground"
+        Color="{ThemeResource AccentFillColorDefaultBrush}"/>
+
+    <SolidColorBrush
+        x:Key="AccentSplitButtonBackgroundPointerOver"
+        Color="{ThemeResource AccentFillColorSecondaryBrush}"/>
+
+    <SolidColorBrush
+        x:Key="AccentSplitButtonBackgroundPressed"
+        Color="{ThemeResource AccentFillColorTertiaryBrush}"/>
+
+    <SolidColorBrush
+        x:Key="AccentSplitButtonBackgroundDisabled"
+        Color="{ThemeResource AccentFillColorDisabledBrush}"/>
+
+    <SolidColorBrush
+        x:Key="AccentSplitButtonForeground"
+        Color="{ThemeResource TextOnAccentFillColorPrimaryBrush}"/>
+
+    <SolidColorBrush
+        x:Key="AccentSplitButtonForegroundDisabled"
+        Color="{ThemeResource TextOnAccentFillColorDisabledBrush}"/>
+
+    <SolidColorBrush
+        x:Key="AccentSplitButtonBorderBrush"
+        Color="{ThemeResource ControlStrokeColorOnAccentDefaultBrush}"/>
+
+    <SolidColorBrush
+        x:Key="AccentSplitButtonBorderBrushPointerOver"
+        Color="{ThemeResource ControlStrokeColorOnAccentSecondaryBrush}"/>
+
+    <SolidColorBrush
+        x:Key="AccentSplitButtonBorderBrushPressed"
+        Color="{ThemeResource ControlStrokeColorOnAccentDefaultBrush}"/>
+
+    <SolidColorBrush
+        x:Key="AccentSplitButtonBorderBrushDisabled"
+        Color="{ThemeResource ControlStrokeColorOnAccentDefaultBrush}"/>
+
+
+    <!-- Default SplitButton resource overrides -->
+
+    <SolidColorBrush
+        x:Key="SplitButtonBackground"
+        Color="{ThemeResource SystemAccentColor}"/>
+
+    <SolidColorBrush
+        x:Key="SplitButtonBackgroundPointerOver"
+        Color="{ThemeResource SystemAccentColorLight1}"/>
+
+    <SolidColorBrush
+        x:Key="SplitButtonBackgroundPressed"
+        Color="{ThemeResource SystemAccentColorDark1}"/>
+
+    <SolidColorBrush
+        x:Key="SplitButtonBackgroundDisabled"
+        Color="#FF454545"/>
+
+
+    <!-- Foreground -->
+
+    <SolidColorBrush
+        x:Key="SplitButtonForeground"
+        Color="#FFFFFFFF"/>
+
+    <SolidColorBrush
+        x:Key="SplitButtonForegroundPointerOver"
+        Color="#FFFFFFFF"/>
+
+    <SolidColorBrush
+        x:Key="SplitButtonForegroundPressed"
+        Color="#FFFFFFFF"/>
+
+    <SolidColorBrush
+        x:Key="SplitButtonForegroundDisabled"
+        Color="#FFB0B0B0"/>
+
+
+    <!-- Border -->
+
+    <SolidColorBrush
+        x:Key="SplitButtonBorderBrush"
+        Color="Transparent"/>
+
+    <SolidColorBrush
+        x:Key="SplitButtonBorderBrushPointerOver"
+        Color="Transparent"/>
+
+    <SolidColorBrush
+        x:Key="SplitButtonBorderBrushPressed"
+        Color="Transparent"/>
+
+    <SolidColorBrush
+        x:Key="SplitButtonBorderBrushDisabled"
+        Color="Transparent"/>
+
+
+    <!-- Checked states (for derived ToggleSplitButton) -->
+
+    <SolidColorBrush
+        x:Key="SplitButtonBackgroundChecked"
+        Color="{ThemeResource SystemAccentColor}"/>
+
+    <SolidColorBrush
+        x:Key="SplitButtonBackgroundCheckedPointerOver"
+        Color="{ThemeResource SystemAccentColorLight1}"/>
+
+    <SolidColorBrush
+        x:Key="SplitButtonBackgroundCheckedPressed"
+        Color="{ThemeResource SystemAccentColorDark1}"/>
+
+    <SolidColorBrush
+        x:Key="SplitButtonBackgroundCheckedDisabled"
+        Color="#FF454545"/>
+
+    <SolidColorBrush
+        x:Key="SplitButtonForegroundChecked"
+        Color="#FFFFFFFF"/>
+
+    <SolidColorBrush
+        x:Key="SplitButtonForegroundCheckedPointerOver"
+        Color="#FFFFFFFF"/>
+
+    <SolidColorBrush
+        x:Key="SplitButtonForegroundCheckedPressed"
+        Color="#FFFFFFFF"/>
+
+    <SolidColorBrush
+        x:Key="SplitButtonForegroundCheckedDisabled"
+        Color="#FFB0B0B0"/>
+
+
+    <!-- Main reusable style -->
+
+    <Style
+        x:Key="AccentSplitButtonStyle"
+        TargetType="SplitButton">
+
+        <Setter
+            Property="Background"
+            Value="{ThemeResource AccentSplitButtonBackground}"/>
+
+        <Setter
+            Property="Foreground"
+            Value="{ThemeResource AccentSplitButtonForeground}"/>
+
+    </Style>
+
+</ResourceDictionary>
