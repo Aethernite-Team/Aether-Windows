@@ -1,3 +1,4 @@
+using Aether_Windows.Views;
 using Microsoft.UI;
 using Microsoft.UI.Windowing;
 using Microsoft.UI.Xaml;
@@ -6,12 +7,14 @@ using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Data;
 using Microsoft.UI.Xaml.Input;
 using Microsoft.UI.Xaml.Media;
+using Microsoft.UI.Xaml.Media.Animation;
 using Microsoft.UI.Xaml.Navigation;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI;
@@ -39,7 +42,19 @@ namespace Aether_Windows
 
             }
 
+
+
         }
 
+        private async void viewportFrame_Loaded(object sender, RoutedEventArgs e)
+        {
+            viewportFrame.Navigate(typeof(Dashboard), null, new EntranceNavigationTransitionInfo());
+        }
+
+        private void viewportFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+            // navbar logics
+            if (viewportFrame.CurrentSourcePageType == typeof(Dashboard)) { navSidebar.SelectedItem = navSidebar.MenuItems[1]; };
+        }
     }
 }

@@ -22,7 +22,7 @@
         
         <!--TODO: Replace sidebar with templated controls-->
         <!--Left Sidebar-->
-        <NavigationView PaneDisplayMode="Left" IsPaneToggleButtonVisible="False">
+        <NavigationView x:Name="navSidebar" PaneDisplayMode="Left" IsPaneToggleButtonVisible="False">
             <NavigationView.PaneHeader>
                 <Grid Height="52" Margin="12">
                     <Grid.ColumnDefinitions>
@@ -37,21 +37,21 @@
                     </Button>
                     <Button Grid.Column="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalContentAlignment="Left" Style="{ThemeResource AccentButtonStyle}" CornerRadius="4,24,24,4">
                         <Button.Flyout>
-                            <Flyout Placement="BottomEdgeAlignedRight" AreOpenCloseAnimationsEnabled="True">
-                                <StackPanel Margin="-16" CornerRadius="12">
-                                    <Button Width="350" HorizontalContentAlignment="Left" CornerRadius="0" Background="Transparent">
+                            <Flyout Placement="Bottom" AreOpenCloseAnimationsEnabled="True" ShouldConstrainToRootBounds="False">
+                                <StackPanel Margin="-16" CornerRadius="16">
+                                    <Button Width="350" HorizontalContentAlignment="Left" CornerRadius="0" Background="Transparent" Padding="12,16">
                                         <StackPanel Orientation="Horizontal" Spacing="12">
                                             <FontIcon Glyph="&#xE945;" FontSize="22" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"/>
                                             <StackPanel Width="300">
                                                 <TextBlock Style="{ThemeResource BodyStrongTextBlockStyle}" Text="Quick create"/>
                                                 <TextBlock Style="{ThemeResource CaptionTextBlockStyle}" TextWrapping="Wrap">
-                                                    <Run>Create a vault with default configs. You can also double-click </Run>
+                                                    <Run>Create a vault with default configs. This is the default action when you click </Run>
                                                     <Run FontWeight="Bold" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}">Create a vault.</Run>
                                                 </TextBlock>
                                             </StackPanel>
                                         </StackPanel>
                                     </Button>
-                                    <Button Width="350" HorizontalContentAlignment="Left" CornerRadius="0" Background="Transparent">
+                                    <Button Width="350" HorizontalContentAlignment="Left" CornerRadius="0" Background="Transparent" Padding="12,16">
                                         <StackPanel Orientation="Horizontal" Spacing="12">
                                             <FontIcon Glyph="&#xE9F5;" FontSize="22" Foreground="{ThemeResource AccentTextFillColorPrimaryBrush}"/>
                                             <StackPanel Width="300">
@@ -104,8 +104,8 @@
 
         </StackPanel>
 
-        <Frame Grid.Column="1" Margin="0"  Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"/>
-        <TextBlock Style="{ThemeResource TitleTextBlockStyle}" Grid.Column="1">Views.Dashboard.xaml</TextBlock>
+        <Frame x:Name="viewportFrame" Loaded="viewportFrame_Loaded" Navigated="viewportFrame_Navigated"
+               Grid.Column="1" Margin="0"  Background="{ThemeResource CardBackgroundFillColorDefaultBrush}"/>
 
     </Grid>
 </Window>

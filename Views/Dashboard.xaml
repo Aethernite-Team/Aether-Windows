@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Page
+    x:Class="Aether_Windows.Views.Dashboard"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Aether_Windows.Views"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:labs="using:CommunityToolkit.WinUI.Controls"
+    xmlns:models="using:Aether_Windows.Models"
+    xmlns:helpers="using:Aether_Windows.Helpers"
+    mc:Ignorable="d">
+
+    <ScrollViewer>
+        <Grid>
+            <labs:OpacityMaskView MaxHeight="400" VerticalAlignment="Top">
+                <labs:OpacityMaskView.OpacityMask>
+                    <Rectangle>
+                        <Rectangle.Fill>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                                <GradientStop Offset="0" Color="White" />
+                                <GradientStop Offset="1" Color="Transparent" />
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </labs:OpacityMaskView.OpacityMask>
+                <Image Source="ms-appx:///Assets/dashboard_banner.jpg" Stretch="UniformToFill"/>
+
+            </labs:OpacityMaskView>
+            <StackPanel Spacing="0" Margin="32,180,32,0">
+                <TextBlock Style="{ThemeResource BaseTextBlockStyle}" Opacity="0.7">Aether for Windows (Nightly Build)</TextBlock>
+                <TextBlock Style="{ThemeResource TitleLargeTextBlockStyle}" FontFamily="Space Grotesk Medium" Opacity="1">Good afternoon.</TextBlock>
+                <GridView ItemsSource="{x:Bind State.RecentVault}">
+                    <GridView.ItemTemplate>
+                    <DataTemplate x:DataType="models:RecentVaults">
+                        <StackPanel CornerRadius="12" Orientation="Vertical" Spacing="12" Padding="12">
+                            <FontIcon Foreground="{ThemeResource AccentFillColorDefaultBrush}" FontSize="48" Glyph="&#xF540;"/>
+                            <StackPanel Spacing="2">
+                                <TextBlock Style="{ThemeResource BodyStrongTextBlockStyle}" Text="{x:Bind VaultName}"/>
+                                <TextBlock Style="{ThemeResource CaptionTextBlockStyle}" Opacity="0.8" Text="{x:Bind VaultId}"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
+            </StackPanel>
+        </Grid>
+    </ScrollViewer>
+</Page>
